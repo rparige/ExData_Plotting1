@@ -21,7 +21,7 @@ png("plot2.png")
 ## plot linechart
 
 plot(epcDFSS$DateTime, epcDFSS$Global_active_power,type="l", 
-xlab = "Day of Week", ylab = "Global Active Power (kilowatts)", 
+xlab = "", ylab = "Global Active Power (kilowatts)", 
 col = "black", las = 1)
 
 ## close the grahphics device and the plot file
