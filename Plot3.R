@@ -16,13 +16,19 @@ epcDFSS <- subset(epcDF, Date == "2007-02-01" | Date == "2007-02-02")
 
 ## set graphics device to png and set filename
 
-png("plot2.png")
+png("plot3.png")
 
 ## plot linechart
 
-plot(epcDFSS$DateTime, epcDFSS$Global_active_power,type="l", 
-xlab = "", ylab = "Global Active Power (kilowatts)", 
+plot(epcDFSS$DateTime, epcDFSS$Sub_metering_1,type="l", 
+xlab = "", ylab = "Energy Sub metering", 
 col = "black", las = 1)
+lines(epcDFSS$DateTime, epcDFSS$Sub_metering_2, type="l", col = "red")
+lines(epcDFSS$DateTime, epcDFSS$Sub_metering_3, type="l", col = "blue")
+
+legend(x="topright",y="topright", legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
+	 col =c("black","red","blue"), lwd=2)
+
 
 ## close the grahphics device and the plot file
 
